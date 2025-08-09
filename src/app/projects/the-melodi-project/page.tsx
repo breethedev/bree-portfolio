@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import "./page.css";
+import s from "./page.module.css";
 
 export default function MelodiProjectPage() {
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
@@ -33,49 +33,49 @@ export default function MelodiProjectPage() {
   };
 
   return (
-    <main id="main-content" className="melodi-case-study">
+    <main id="main-content" className={s["melodi-case-study"]}>
       {/* Hero Section */}
-      <section ref={(el) => addSectionRef(el, 0)} className="case-study__hero">
+      <section ref={(el) => addSectionRef(el, 0)} className={s["case-study__hero"]}>
         <div className="container">
-          <div className="hero__content">
-            <div className="hero__text">
-              <div className="hero__title-container">
-                <h1 className="hero__title">
+          <div className={s["hero__content"]}>
+            <div className={s["hero__text"]}>
+              <div className={s["hero__title-container"]}>
+                <h1 className={s["hero__title"]}>
                   The Melodi Project
-                  <span className="hero__subtitle">Support Your Sound.</span>
+                  <span className={s["hero__subtitle"]}>Support Your Sound.</span>
                 </h1>
-                <p className="project-badge">Case Study</p>
+                <p className={s["project-badge"]}>Case Study</p>
               </div>
 
-              <div className="hero__subtitle-container">
-                <p className="hero__tagline">
+              <div className={s["hero__subtitle-container"]}>
+                <p className={s["hero__tagline"]}>
                   Integrating e-commerce directly into music streaming platforms to empower artists.
                 </p>
               </div>
             </div>
 
-            <div className="hero__visual">
-              <div className="mockup-container">
+            <div className={s["hero__visual"]}>
+              <div className={s["mockup-container"]}>
                 <Image
                   src="/images/PRODUCT_DETAILS.png"
                   alt="Melodi Project"
                   fill
-                  className="mockup-image"
+                  className={s["mockup-image"]}
                 />
               </div>
             </div>
-            <div className="hero__stats">
-              <div className="stat">
-                <span className="stat__label">Tech Stack</span>
-                <span className="stat__value">Next.js, MedusaJS, Supabase</span>
+            <div className={s["hero__stats"]}>
+              <div className={s["stat"]}>
+                <span className={s["stat__label"]}>Tech Stack</span>
+                <span className={s["stat__value"]}>Next.js, MedusaJS, Supabase</span>
               </div>
-              <div className="stat">
-                <span className="stat__label">Target</span>
-                <span className="stat__value">Music Artists & Fans</span>
+              <div className={s["stat"]}>
+                <span className={s["stat__label"]}>Target</span>
+                <span className={s["stat__value"]}>Music Artists & Fans</span>
               </div>
-              <div className="stat">
-                <span className="stat__label">My Role</span>
-                <span className="stat__value">UX/UI Design, Frontend</span>
+              <div className={s["stat"]}>
+                <span className={s["stat__label"]}>My Role</span>
+                <span className={s["stat__value"]}>UX/UI Design, Frontend</span>
               </div>
             </div>
           </div>
@@ -83,12 +83,12 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* Problem & Opportunity */}
-      <section ref={(el) => addSectionRef(el, 1)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 1)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">The Problem & Opportunity</h2>
+          <h2 className={s["section__title"]}>The Problem & Opportunity</h2>
 
-          <div className="problem-content">
-            <div className="problem__main">
+          <div className={s["problem-content"]}>
+            <div className={s["problem__main"]}>
               <h3>Problem Statement</h3>
               <p>
                 The current music streaming ecosystem leaves artists struggling with minimal revenue
@@ -98,7 +98,7 @@ export default function MelodiProjectPage() {
               </p>
             </div>
 
-            <div className="problem__opportunity">
+            <div className={s["problem__opportunity"]}>
               <h3>Opportunity</h3>
               <p>
                 By integrating e-commerce directly into streaming platforms, we can create seamless
@@ -108,8 +108,8 @@ export default function MelodiProjectPage() {
             </div>
           </div>
 
-          <div className="callout-box">
-            <div className="callout__content">
+          <div className={s["callout-box"]}>
+            <div className={s["callout__content"]}>
               <h4>Artists earn less than $0.005 per stream.</h4>
               <p>We can change that.</p>
             </div>
@@ -118,21 +118,21 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* Vision & Goals */}
-      <section ref={(el) => addSectionRef(el, 2)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 2)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">Vision & Goals</h2>
+          <h2 className={s["section__title"]}>Vision & Goals</h2>
 
-          <div className="vision-content">
-            <div className="vision__statement">
+          <div className={s["vision-content"]}>
+            <div className={s["vision__statement"]}>
               <h3>Vision Statement</h3>
-              <p className="vision__text">
+              <p className={s["vision__text"]}>
                 Make music streaming profitable for artists through integrated e-commerce, creating
                 a sustainable ecosystem where creativity thrives and fans can meaningfully support
                 the music they love.
               </p>
             </div>
 
-            <div className="goals__list">
+            <div className={s["goals__list"]}>
               <h3>Core Goals</h3>
               <ul>
                 <li>Let artists sell merch and tickets directly in streaming apps</li>
@@ -147,12 +147,12 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* My Role & Responsibilities */}
-      <section ref={(el) => addSectionRef(el, 3)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 3)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">My Role & Responsibilities</h2>
+          <h2 className={s["section__title"]}>My Role & Responsibilities</h2>
 
-          <div className="role-content">
-            <div className="role__contributions">
+          <div className={s["role-content"]}>
+            <div className={s["role__contributions"]}>
               <h3>My Contributions</h3>
               <ul>
                 <li>UX/UI Design & User Research</li>
@@ -164,7 +164,7 @@ export default function MelodiProjectPage() {
               </ul>
             </div>
 
-            <div className="role__collaboration">
+            <div className={s["role__collaboration"]}>
               <h3>Collaboration</h3>
               <p>
                 Working closely with marketing strategists, design peers, and engineering teams to
@@ -176,12 +176,12 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* Research & Insights */}
-      <section ref={(el) => addSectionRef(el, 4)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 4)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">Research & Insights</h2>
+          <h2 className={s["section__title"]}>Research & Insights</h2>
 
-          <div className="research-content">
-            <div className="research__overview">
+          <div className={s["research-content"]}>
+            <div className={s["research__overview"]}>
               <p>
                 Through extensive market research, artist interviews, and competitive analysis,
                 I&apos;ve identified key pain points and opportunities in the current music
@@ -189,17 +189,17 @@ export default function MelodiProjectPage() {
               </p>
             </div>
 
-            <div className="research__personas">
+            <div className={s["research__personas"]}>
               <h3>Artist Personas</h3>
-              <div className="personas-grid">
-                <div className="persona">
+              <div className={s["personas-grid"]}>
+                <div className={s["persona"]}>
                   <h4>Sarah - Independent Artist</h4>
                   <p>
                     &ldquo;I make $200/month from streaming but spend $500 on marketing. I need
                     direct fan support.&rdquo;
                   </p>
                 </div>
-                <div className="persona">
+                <div className={s["persona"]}>
                   <h4>Marcus - Established Musician</h4>
                   <p>
                     &ldquo;My fans want exclusive content and merch, but I lose 30% to third-party
@@ -209,7 +209,7 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="research__quote">
+            <div className={s["research__quote"]}>
               <blockquote>
                 &ldquo;Fans are willing to pay 5-10x more for direct artist support than what they
                 generate through streaming alone.&rdquo;
@@ -220,16 +220,16 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* The Process */}
-      <section ref={(el) => addSectionRef(el, 5)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 5)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">The Process</h2>
+          <h2 className={s["section__title"]}>The Process</h2>
 
-          <div className="process-stages">
-            <div className="stage">
+          <div className={s["process-stages"]}>
+            <div className={s["stage"]}>
               <h3>1. Discovery & Ideation</h3>
-              <div className="stage__content">
-                <div className="stage__visual">
-                  <div className="process-placeholder">
+              <div className={s["stage__content"]}>
+                <div className={s["stage__visual"]}>
+                  <div className={s["process-placeholder"]}>
                     <span>Brainstorm Sketches</span>
                     <span>Early Notes</span>
                     <span>Whiteboard Sessions</span>
@@ -242,11 +242,11 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="stage">
+            <div className={s["stage"]}>
               <h3>2. Wireframing</h3>
-              <div className="stage__content">
-                <div className="stage__visual">
-                  <div className="process-placeholder">
+              <div className={s["stage__content"]}>
+                <div className={s["stage__visual"]}>
+                  <div className={s["process-placeholder"]}>
                     <span>Low-Fidelity Layouts</span>
                     <span>User Flow Maps</span>
                     <span>Information Architecture</span>
@@ -259,11 +259,11 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="stage">
+            <div className={s["stage"]}>
               <h3>3. High-Fidelity Designs</h3>
-              <div className="stage__content">
-                <div className="stage__visual">
-                  <div className="process-placeholder">
+              <div className={s["stage__content"]}>
+                <div className={s["stage__visual"]}>
+                  <div className={s["process-placeholder"]}>
                     <span>Figma Screens</span>
                     <span>Component Library</span>
                     <span>Design System</span>
@@ -276,11 +276,11 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="stage">
+            <div className={s["stage"]}>
               <h3>4. Architecture Decisions</h3>
-              <div className="stage__content">
-                <div className="stage__visual">
-                  <div className="process-placeholder">
+              <div className={s["stage__content"]}>
+                <div className={s["stage__visual"]}>
+                  <div className={s["process-placeholder"]}>
                     <span>Next.js Frontend</span>
                     <span>MedusaJS E-commerce</span>
                     <span>Supabase Backend</span>
@@ -297,19 +297,19 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* Key Features */}
-      <section ref={(el) => addSectionRef(el, 6)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 6)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">Key Features (WIP Previews)</h2>
+          <h2 className={s["section__title"]}>Key Features (WIP Previews)</h2>
 
-          <div className="features-grid">
-            <div className="feature">
-              <div className="feature__visual">
-                <div className="feature-placeholder">
+          <div className={s["features-grid"]}>
+            <div className={s["feature"]}>
+              <div className={s["feature__visual"]}>
+                <div className={s["feature-placeholder"]}>
                   <span>Artist Storefronts</span>
-                  <div className="feature-status">Currently Designing</div>
+                  <div className={s["feature-status"]}>Currently Designing</div>
                 </div>
               </div>
-              <div className="feature__content">
+              <div className={s["feature__content"]}>
                 <h3>Artist Storefronts</h3>
                 <p>
                   Customizable storefronts that integrate seamlessly with streaming profiles,
@@ -318,14 +318,14 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="feature">
-              <div className="feature__visual">
-                <div className="feature-placeholder">
+            <div className={s["feature"]}>
+              <div className={s["feature__visual"]}>
+                <div className={s["feature-placeholder"]}>
                   <span>Integrated Checkout</span>
-                  <div className="feature-status">Prototype Only</div>
+                  <div className={s["feature-status"]}>Prototype Only</div>
                 </div>
               </div>
-              <div className="feature__content">
+              <div className={s["feature__content"]}>
                 <h3>Integrated Checkout</h3>
                 <p>
                   One-click purchasing that maintains the streaming experience while providing
@@ -334,14 +334,14 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="feature">
-              <div className="feature__visual">
-                <div className="feature-placeholder">
+            <div className={s["feature"]}>
+              <div className={s["feature__visual"]}>
+                <div className={s["feature-placeholder"]}>
                   <span>Ticketing & Experiences</span>
-                  <div className="feature-status">Feature Under Development</div>
+                  <div className={s["feature-status"]}>Feature Under Development</div>
                 </div>
               </div>
-              <div className="feature__content">
+              <div className={s["feature__content"]}>
                 <h3>Ticketing & Experiences</h3>
                 <p>
                   Direct ticket sales for concerts and exclusive fan experiences, eliminating
@@ -354,18 +354,18 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* Challenges & Solutions */}
-      <section ref={(el) => addSectionRef(el, 7)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 7)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">Challenges & Solutions</h2>
+          <h2 className={s["section__title"]}>Challenges & Solutions</h2>
 
-          <div className="challenges-grid">
-            <div className="challenge">
+          <div className={s["challenges-grid"]}>
+            <div className={s["challenge"]}>
               <h3>Challenge: Seamless Integration</h3>
               <p>
                 Creating a purchasing experience that feels native to streaming platforms without
                 disrupting the listening experience.
               </p>
-              <div className="solution">
+              <div className={s["solution"]}>
                 <h4>Solution</h4>
                 <p>
                   Designed contextual purchase prompts that appear at natural break points (end of
@@ -374,13 +374,13 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="challenge">
+            <div className={s["challenge"]}>
               <h3>Challenge: Payment Processing</h3>
               <p>
                 Handling multiple payment methods, currencies, and regional requirements while
                 maintaining security and compliance.
               </p>
-              <div className="solution">
+              <div className={s["solution"]}>
                 <h4>Solution</h4>
                 <p>
                   Leveraging MedusaJS&apos;s robust payment infrastructure and implementing Stripe
@@ -389,13 +389,13 @@ export default function MelodiProjectPage() {
               </div>
             </div>
 
-            <div className="challenge">
+            <div className={s["challenge"]}>
               <h3>Challenge: Artist Onboarding</h3>
               <p>
                 Making it easy for artists of all technical levels to set up their storefronts and
                 manage inventory.
               </p>
-              <div className="solution">
+              <div className={s["solution"]}>
                 <h4>Solution</h4>
                 <p>
                   Creating intuitive setup wizards with templates, bulk import tools, and automated
@@ -408,33 +408,33 @@ export default function MelodiProjectPage() {
       </section>
 
       {/* Next Steps / Roadmap */}
-      <section ref={(el) => addSectionRef(el, 8)} className="case-study__section">
+      <section ref={(el) => addSectionRef(el, 8)} className={s["case-study__section"]}>
         <div className="container">
-          <h2 className="section__title">Next Steps / Roadmap</h2>
+          <h2 className={s["section__title"]}>Next Steps / Roadmap</h2>
 
-          <div className="roadmap-content">
-            <div className="roadmap__visual">
-              <div className="roadmap-timeline">
-                <div className="timeline-item">
-                  <div className="timeline__phase">MVP</div>
-                  <div className="timeline__description">Core e-commerce functionality</div>
+          <div className={s["roadmap-content"]}>
+            <div className={s["roadmap__visual"]}>
+              <div className={s["roadmap-timeline"]}>
+                <div className={s["timeline-item"]}>
+                  <div className={s["timeline__phase"]}>MVP</div>
+                  <div className={s["timeline__description"]}>Core e-commerce functionality</div>
                 </div>
-                <div className="timeline-item">
-                  <div className="timeline__phase">Artist Beta</div>
-                  <div className="timeline__description">Limited artist testing</div>
+                <div className={s["timeline-item"]}>
+                  <div className={s["timeline__phase"]}>Artist Beta</div>
+                  <div className={s["timeline__description"]}>Limited artist testing</div>
                 </div>
-                <div className="timeline-item">
-                  <div className="timeline__phase">Public Launch</div>
-                  <div className="timeline__description">Full platform release</div>
+                <div className={s["timeline-item"]}>
+                  <div className={s["timeline__phase"]}>Public Launch</div>
+                  <div className={s["timeline__description"]}>Full platform release</div>
                 </div>
-                <div className="timeline-item">
-                  <div className="timeline__phase">Iteration</div>
-                  <div className="timeline__description">Data analysis & improvements</div>
+                <div className={s["timeline-item"]}>
+                  <div className={s["timeline__phase"]}>Iteration</div>
+                  <div className={s["timeline__description"]}>Data analysis & improvements</div>
                 </div>
               </div>
             </div>
 
-            <div className="roadmap__integrations">
+            <div className={s["roadmap__integrations"]}>
               <h3>Planned Integrations</h3>
               <ul>
                 <li>Spotify API for seamless streaming integration</li>
@@ -450,10 +450,10 @@ export default function MelodiProjectPage() {
       {/* Closing & Call to Action */}
       <section
         ref={(el) => addSectionRef(el, 9)}
-        className="case-study__section case-study__closing"
+        className={`${s["case-study__section"]} ${s["case-study__closing"]}`}
       >
         <div className="container">
-          <div className="closing-content">
+          <div className={s["closing-content"]}>
             <h2>Supporting Artists, One Stream at a Time</h2>
             <p>
               The Melodi Project represents a fundamental shift in how artists and fans interact in
@@ -462,20 +462,23 @@ export default function MelodiProjectPage() {
               connections.
             </p>
 
-            <div className="closing__cta">
+            <div className={s["closing__cta"]}>
               <p>
                 If you&apos;re a music streaming company or artist interested in this vision,
                 let&apos;s connect and explore how we can revolutionize the industry together.
               </p>
-              <div className="cta__buttons">
-                <a href="/contact" className="btn btn--primary btn--large">
+              <div className={s["cta__buttons"]}>
+                <a
+                  href="/contact"
+                  className={`${s["btn"]} ${s["btn--primary"]} ${s["btn--large"]}`}
+                >
                   Get In Touch
                 </a>
                 <a
                   href="https://linkedin.com/in/breeana-payton"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn--secondary btn--large"
+                  className={`${s["btn"]} ${s["btn--secondary"]} ${s["btn--large"]}`}
                 >
                   Connect on LinkedIn
                 </a>

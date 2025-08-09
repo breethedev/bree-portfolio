@@ -122,6 +122,7 @@ body {
 
 body {
   min-height: 100vh;
+  overflow-y: hidden;
 }
 
 a {
@@ -169,6 +170,11 @@ textarea {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--btd-space-4);
+}
+
+.section--visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Debug styles - remove after fixing */
