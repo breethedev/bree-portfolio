@@ -73,7 +73,7 @@ export default function Experience() {
 
           <div className="experience__cta">
             <a href="#contact" className="btn btn--primary">
-              Let's Connect
+              Let&apos;s Connect
             </a>
           </div>
         </div>

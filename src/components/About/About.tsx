@@ -45,7 +45,7 @@ export default function About() {
           <div className="about__grid">
             <div className="about__text">
               <p className="about__intro">
-                Hi, I'm <strong>Breeana Payton</strong>, a Senior Software Engineer with over 5
+                Hi, I&apos;m <strong>Breeana Payton</strong>, a Senior Software Engineer with over 5
                 years of professional coding experience.
               </p>
 
@@ -87,7 +87,7 @@ export default function About() {
 
           <div className="about__cta">
             <a href="#contact" className="btn btn--primary">
-              Let's Work Together
+              Let&apos;s Work Together
             </a>
           </div>
         </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import "./CurrentProject.css";
 
 export default function CurrentProject() {
@@ -35,16 +36,24 @@ export default function CurrentProject() {
           <div className="current-project__card">
             <div className="current-project__image">
               <div className="current-project__image-placeholder">
-                <span className="current-project__image-text">Project Image</span>
+                <Image
+                  src="/images/the_melodi_project.png"
+                  alt="Portfolio Website Screenshot"
+                  fill
+                  priority
+                  loading="eager"
+                  className="current-project__image"
+                />
               </div>
             </div>
 
             <div className="current-project__details">
-              <h3 className="current-project__project-title">Portfolio Website</h3>
+              <h3 className="current-project__project-title">the melodi project</h3>
               <p className="current-project__description">
-                A modern, responsive portfolio website built with Next.js, TypeScript, and CSS
-                Modules. This project showcases my expertise in frontend development, accessibility,
-                and responsive design.
+                A case study for an in-progress monorepo building a javascript library for
+                integrating ecommerce with music streaming apps. This project showcases a possible
+                solution for increasing revenue for artists by allowing them to sell merchandise
+                directly through their music streaming platforms.
               </p>
 
               <div className="current-project__tech">
@@ -52,19 +61,15 @@ export default function CurrentProject() {
                 <span className="current-project__tech-tag">TypeScript</span>
                 <span className="current-project__tech-tag">CSS Modules</span>
                 <span className="current-project__tech-tag">Responsive Design</span>
+                <span className="current-project__tech-tag">NodeJs</span>
+                <span className="current-project__tech-tag">
+                  Full App Architecture & System Design
+                </span>
               </div>
 
               <div className="current-project__actions">
                 <Link href="/projects/the-melodi-project" className="btn btn--primary">
                   View Case Study
-                </Link>
-                <Link
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--secondary"
-                >
-                  View Code
                 </Link>
               </div>
             </div>

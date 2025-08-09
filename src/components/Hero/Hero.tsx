@@ -30,7 +30,7 @@ export default function Hero() {
 
   const handleResumeDownload = () => {
     // This would typically link to an actual resume file
-    // For now, we'll just scroll to the contact section
+    // For now, we&apos;ll just scroll to the contact section
     const contactSection = document.getElementById("contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
