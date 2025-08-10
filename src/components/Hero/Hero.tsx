@@ -56,9 +56,13 @@ export default function Hero() {
               <a href="#contact" className="btn btn--primary btn--large">
                 Book A Call
               </a>
-              <button onClick={handleResumeDownload} className="btn btn--secondary btn--large">
+              <a
+                href="/files/resume.pdf"
+                download="resume.pdf"
+                className="btn btn--secondary btn--large"
+              >
                 See Resume
-              </button>
+              </a>
             </div>
           </div>
 
