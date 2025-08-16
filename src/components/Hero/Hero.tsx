@@ -48,8 +48,8 @@ export default function Hero() {
             </h1>
 
             <p className="hero__subtitle">
-              Crafting exceptional user experiences with React, TypeScript, and modern web
-              technologies
+              👋 Hi, I&apos;m Bree. Here&apos;s where I build, show, and talk about my skills. Happy
+              you&apos;re here. Take a look around.
             </p>
 
             <div className="hero__cta">

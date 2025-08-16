@@ -1,0 +1,8 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: row;
+  padding: 100px var(--btd-space-10);
+  color: var(--btd-color-fg);
+}

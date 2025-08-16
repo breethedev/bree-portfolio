@@ -32,6 +32,7 @@ export default function About() {
     "Tailwind",
     "Frontend Architecture",
     "NodeJS",
+    "Training",
   ];
 
   const additionalSkills = ["Figma", "Storybook", "Component Libraries"];
@@ -45,14 +46,14 @@ export default function About() {
           <div className="about__grid">
             <div className="about__text">
               <p className="about__intro">
-                Hi, I&apos;m <strong>Breeana Payton</strong>, a Senior Software Engineer with over 5
-                years of professional coding experience.
+                I&apos;m a Senior Software Engineer with over 5 years of professional coding
+                experience.
               </p>
 
               <p className="about__description">
-                I specialize in building exceptional user experiences and scalable frontend
-                architectures. My expertise lies in modern web technologies, with a focus on
-                creating maintainable, performant, and accessible applications.
+                I specialize in building component libraries, bringing apps to full accessibility
+                compliance, and training junior engineers to have consistent and high quality
+                commits.
               </p>
             </div>
 
