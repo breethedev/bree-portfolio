@@ -99,8 +99,8 @@ export default function Contact() {
               <div className="contact__methods">
                 <div className="contact__method">
                   <span className="contact__method-label">Email:</span>
-                  <a href="mailto:breeana@example.com" className="contact__method-value">
-                    breeana@example.com
+                  <a href="mailto:bree@breethedev.com" className="contact__method-value">
+                    bree@breethedev.com
                   </a>
                 </div>
 
