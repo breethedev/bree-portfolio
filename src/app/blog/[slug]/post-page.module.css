@@ -1,0 +1,4 @@
+.post_page {
+  padding: 100px var(--btd-space-10);
+  color: var(--btd-color-fg);
+}

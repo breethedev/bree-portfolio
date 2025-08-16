@@ -88,12 +88,12 @@ export default function Navbar() {
           <ul className="navbar__nav">
             <li>
               <a href="#about" onClick={(e) => handleNavClick(e, "#about")}>
-                About Me
+                About
               </a>
             </li>
             <li>
               <a href="#current-project" onClick={(e) => handleNavClick(e, "#current-project")}>
-                Current Project
+                Projects
               </a>
             </li>
             <li>
@@ -102,21 +102,14 @@ export default function Navbar() {
               </a>
             </li>
             <li>
+              <a href="/blog">Blog</a>
+            </li>
+            <li>
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                 Contact
               </a>
             </li>
           </ul>
-
-          <div className="navbar__cta">
-            <a
-              href="#contact"
-              className="btn btn--primary"
-              onClick={(e) => handleNavClick(e, "#contact")}
-            >
-              Book A Call
-            </a>
-          </div>
         </div>
       </div>
     </nav>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
-import "./Contact.css";
+import s from "./Contact.module.css";
 
 export default function Contact() {
   const contactRef = useRef<HTMLElement>(null);
@@ -83,34 +83,34 @@ export default function Contact() {
   const isFormValid = formData.fullName.trim() && formData.email.trim() && formData.message.trim();
 
   return (
-    <section id="contact" className="contact" ref={contactRef}>
-      <div className="container contact__container">
-        <div className="contact__content">
-          <h2 className="contact__title">Get In Touch</h2>
+    <section id="contact" className={s["contact"]} ref={contactRef}>
+      <div className={`container ${s["contact__container"]}`}>
+        <div className={s["contact__content"]}>
+          <h2 className={s["contact__title"]}>Get In Touch</h2>
 
-          <div className="contact__grid">
-            <div className="contact__info">
-              <h3 className="contact__info-title">Let&apos;s Work Together</h3>
-              <p className="contact__info-description">
+          <div className={s["contact__grid"]}>
+            <div className={s["contact__info"]}>
+              <h3 className={s["contact__info-title"]}>Let&apos;s Work Together</h3>
+              <p className={s["contact__info-description"]}>
                 I&apos;m always interested in new opportunities and exciting projects. Whether you
                 have a question or just want to say hi, feel free to reach out.
               </p>
 
-              <div className="contact__methods">
-                <div className="contact__method">
-                  <span className="contact__method-label">Email:</span>
-                  <a href="mailto:bree@breethedev.com" className="contact__method-value">
+              <div className={s["contact__methods"]}>
+                <div className={s["contact__method"]}>
+                  <span className={s["contact__method-label"]}>Email:</span>
+                  <a href="mailto:bree@breethedev.com" className={s["contact__method-value"]}>
                     bree@breethedev.com
                   </a>
                 </div>
 
-                <div className="contact__method">
-                  <span className="contact__method-label">LinkedIn:</span>
+                <div className={s["contact__method"]}>
+                  <span className={s["contact__method-label"]}>LinkedIn:</span>
                   <a
                     href="https://linkedin.com/in/breeana-payton"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="contact__method-value"
+                    className={s["contact__method-value"]}
                   >
                     linkedin.com/in/breeana-payton
                   </a>
@@ -118,11 +118,11 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="contact__form-container">
-              <form onSubmit={handleSubmit} className="contact__form">
-                <div className="contact__form-group">
-                  <label htmlFor="fullName" className="contact__label">
-                    Full Name <span className="contact__required">*</span>
+            <div className={s["contact__form-container"]}>
+              <form onSubmit={handleSubmit} className={s["contact__form"]}>
+                <div className={s["contact__form-group"]}>
+                  <label htmlFor="fullName" className={s["contact__label"]}>
+                    Full Name <span className={s["contact__required"]}>*</span>
                   </label>
                   <input
                     type="text"
@@ -130,15 +130,15 @@ export default function Contact() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className="contact__input"
+                    className={s["contact__input"]}
                     required
                     placeholder="Your full name"
                   />
                 </div>
 
-                <div className="contact__form-group">
-                  <label htmlFor="email" className="contact__label">
-                    Email <span className="contact__required">*</span>
+                <div className={s["contact__form-group"]}>
+                  <label htmlFor="email" className={s["contact__label"]}>
+                    Email <span className={s["contact__required"]}>*</span>
                   </label>
                   <input
                     type="email"
@@ -146,14 +146,14 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="contact__input"
+                    className={s["contact__input"]}
                     required
                     placeholder="your.email@example.com"
                   />
                 </div>
 
-                <div className="contact__form-group">
-                  <label htmlFor="position" className="contact__label">
+                <div className={s["contact__form-group"]}>
+                  <label htmlFor="position" className={s["contact__label"]}>
                     Position
                   </label>
                   <input
@@ -162,21 +162,21 @@ export default function Contact() {
                     name="position"
                     value={formData.position}
                     onChange={handleInputChange}
-                    className="contact__input"
+                    className={s["contact__input"]}
                     placeholder="Your position (optional)"
                   />
                 </div>
 
-                <div className="contact__form-group">
-                  <label htmlFor="message" className="contact__label">
-                    Message <span className="contact__required">*</span>
+                <div className={s["contact__form-group"]}>
+                  <label htmlFor="message" className={s["contact__label"]}>
+                    Message <span className={s["contact__required"]}>*</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="contact__textarea"
+                    className={s["contact__textarea"]}
                     required
                     rows={5}
                     placeholder="Tell me about your project or opportunity..."
@@ -185,20 +185,20 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className={`btn btn--primary contact__submit ${!isFormValid ? "contact__submit--disabled" : ""}`}
+                  className={`${s.btn} ${s["btn--primary"]} ${s.contact__submit} ${!isFormValid ? "contact__submit--disabled" : ""}`}
                   disabled={!isFormValid || isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
 
                 {submitStatus === "success" && (
-                  <div className="contact__message contact__message--success">
+                  <div className={`${s["contact__message"]} ${s["contact__message--success"]}`}>
                     Thank you! Your message has been sent successfully.
                   </div>
                 )}
 
                 {submitStatus === "error" && (
-                  <div className="contact__message contact__message--error">
+                  <div className={`${s["contact__message"]} ${s["contact__message--error"]}`}>
                     Something went wrong. Please try again.
                   </div>
                 )}

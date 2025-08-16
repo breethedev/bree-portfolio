@@ -1,13 +1,23 @@
 import s from "./blog.module.css";
+import { getSortedPostsData } from "../lib/articles";
+import { Post } from "@/components/Post/Post";
 
 export default function Blog() {
+  const posts = getSortedPostsData();
+
   return (
-    <div className={s.blog}>
-      <div className={s.blog_content}>
+    <section className={s.blog}>
+      <div className={`${s.blog__content} container`}>
         <h1>The Things I Kinda Know</h1>
 
         <h3>A blog for a Sr. Frontend Engineers</h3>
       </div>
-    </div>
+
+      <div className={s.posts_container}>
+        {posts.map((post) => (
+          <Post key={post.id} {...post} />
+        ))}
+      </div>
+    </section>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useReducer } from "react";
 import { shuffle } from "@/helpers";
-import "./BlackJack.css";
+import s from "./BlackJack.module.css";
 import { Spade, Club, Diamond, Heart } from "lucide-react";
 
 // Minimalist Blackjack (no bets/chips). Player vs Dealer.
@@ -201,14 +201,14 @@ export default function BlackjackGame() {
   const canDeal = state.phase === "idle" || state.phase === "resolve";
 
   return (
-    <div className="blackjack-game">
+    <div className={s["blackjack-game"]}>
       {/* Controls */}
-      <div className="blackjack-controls">
-        <div className="blackjack-btns">
+      <div className={s["blackjack-controls"]}>
+        <div className={s["blackjack-btns"]}>
           <button
             onClick={() => dispatch({ type: "DEAL" })}
             disabled={!canDeal}
-            className={`blackjack-btn blackjack-btn--primary ${!canDeal ? "blackjack-btn--disabled" : ""}`}
+            className={`${s["blackjack-btn"]} ${s["blackjack-btn--primary"]} ${!canDeal ? "blackjack-btn--disabled" : ""}`}
             aria-label="Deal a new hand"
             title="Deal (D)"
           >
@@ -217,7 +217,7 @@ export default function BlackjackGame() {
           <button
             onClick={() => dispatch({ type: "HIT" })}
             disabled={!canHit}
-            className={`blackjack-btn blackjack-btn--ghost ${!canHit ? "blackjack-btn--disabled" : ""}`}
+            className={`${s["blackjack-btn"]} ${s["blackjack-btn--ghost"]} ${!canHit ? "blackjack-btn--disabled" : ""}`}
             aria-label="Hit"
             title="Hit (H)"
           >
@@ -226,7 +226,7 @@ export default function BlackjackGame() {
           <button
             onClick={() => dispatch({ type: "STAND" })}
             disabled={!canStand}
-            className={`blackjack-btn blackjack-btn--ghost ${!canStand ? "blackjack-btn--disabled" : ""}`}
+            className={`${s["blackjack-btn"]} ${s["blackjack-btn--ghost"]} ${!canStand ? "blackjack-btn--disabled" : ""}`}
             aria-label="Stand"
             title="Stand (S)"
           >
@@ -235,25 +235,25 @@ export default function BlackjackGame() {
         </div>
         <button
           onClick={() => dispatch({ type: "NEW_ROUND" })}
-          className="blackjack-btn blackjack-btn--subtle"
+          className={`${s["blackjack-btn"]} ${s["blackjack-btn--subtle"]}`}
           aria-label="Reset the table"
           title="New Round (R)"
         >
           New Round
         </button>
 
-        <div className="blackjack-shortcuts">Shortcuts: D deal · H hit · S stand · R new</div>
+        <div className={s["blackjack-shortcuts"]}>Shortcuts: D deal · H hit · S stand · R new</div>
       </div>
 
       {/* Dealer */}
-      <section aria-label="Dealer hand" className="blackjack-section">
-        <h3 className="blackjack-section__title">Dealer</h3>
-        <div className="blackjack-cards">
+      <section aria-label="Dealer hand" className={s["blackjack-section"]}>
+        <h3 className={s["blackjack-section__title"]}>Dealer</h3>
+        <div className={s["blackjack-cards"]}>
           {state.dealer.map((c, i) => (
             <CardView key={i} card={c} hidden={!state.revealDealerHole && i === 1} />
           ))}
         </div>
-        <div className="blackjack-total">
+        <div className={s["blackjack-total"]}>
           {state.dealer.length === 0
             ? "—"
             : state.revealDealerHole || state.phase !== "player"
@@ -263,21 +263,21 @@ export default function BlackjackGame() {
       </section>
 
       {/* Player */}
-      <section aria-label="Player hand" className="blackjack-section">
-        <h3 className="blackjack-section__title">You</h3>
-        <div className="blackjack-cards">
+      <section aria-label="Player hand" className={s["blackjack-section"]}>
+        <h3 className={s["blackjack-section__title"]}>You</h3>
+        <div className={s["blackjack-cards"]}>
           {state.player.map((c, i) => (
             <CardView key={i} card={c} />
           ))}
         </div>
-        <div className="blackjack-total">
+        <div className={s["blackjack-total"]}>
           {state.player.length === 0 ? "—" : `Total: ${playerTotal.total}`}
         </div>
       </section>
 
       {/* Result banner */}
       {state.phase === "resolve" && (
-        <div role="status" className="blackjack-result">
+        <div role="status" className={s["blackjack-result"]}>
           {state.result === "win" && "You win!"}
           {state.result === "lose" && "Dealer wins."}
           {state.result === "push" && "Push (tie)."}
@@ -293,10 +293,10 @@ function CardView({ card, hidden = false }: { card: Card; hidden?: boolean }) {
   const isRed = card.suit === "♥" || card.suit === "♦";
   return (
     <div
-      className={`blackjack-card ${isRed ? "blackjack-card--red" : ""}`}
+      className={`${s["blackjack-card"]} ${isRed ? s["blackjack-card--red"] : ""}`}
       aria-label={`${card.rank} of ${suitName(card.suit)}`}
     >
-      <div className="blackjack-card__content">
+      <div className={s["blackjack-card__content"]}>
         {card.rank}
         {card.suit}
       </div>
@@ -306,8 +306,11 @@ function CardView({ card, hidden = false }: { card: Card; hidden?: boolean }) {
 
 function CardBack() {
   return (
-    <div className="blackjack-card blackjack-card--back" aria-label="Face-down card">
-      <div className="blackjack-card__back-content">●●●</div>
+    <div
+      className={`${s["blackjack-card"]} ${s["blackjack-card--back"]}`}
+      aria-label="Face-down card"
+    >
+      <div className={s["blackjack-card__back-content"]}>●●●</div>
     </div>
   );
 }
