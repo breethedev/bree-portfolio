@@ -9,10 +9,10 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   return (
     <section className={`container ${s.post_page}`}>
-      <div>
+      <div className={s.home_link__container}>
+        <Home size={20} />
         <Link href={"/blog"} className={s.home_link}>
           Go to Home Page
-          <Home size={20} />
         </Link>
       </div>
 

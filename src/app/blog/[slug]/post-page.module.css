@@ -1,4 +1,33 @@
 .post_page {
   padding: 100px var(--btd-space-10);
   color: var(--btd-color-fg);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.home_link__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.home_link {
+  margin-left: var(--btd-space-3);
+}
+
+.post_page__content > h1 {
+  margin: var(--btd-space-10) 0;
+}
+
+.post_page__content > h2 {
+  margin: var(--btd-space-8) 0;
+  text-decoration: underline;
+}
+
+.post_page__content > p {
+  margin: var(--btd-space-4) 0;
+}
+
+.post_page__content > ul {
+  margin: var(--btd-space-10) var(--btd-space-5);
+  font-size: 0.9rem;
 }
