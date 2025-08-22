@@ -6,11 +6,11 @@ export default function Blog() {
   const posts = getSortedPostsData();
 
   return (
-    <section className={s.blog}>
-      <div className={`${s.blog__content} container`}>
+    <section className={`${s.blog} container`}>
+      <div className={s.blog__header}>
         <h1>The Things I Kinda Know</h1>
 
-        <h3>A blog for a Sr. Frontend Engineers</h3>
+        <h3>A Blog for a Sr. Frontend Engineers</h3>
       </div>
 
       <div className={s.posts_container}>

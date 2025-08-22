@@ -164,6 +164,17 @@ textarea {
   font-family: inherit;
 }
 
+pre {
+  background-color: var(--btd-color-bg);
+  padding: var(--btd-space-4);
+  border-radius: var(--btd-radius-md);
+}
+
+details {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 /* Focus styles for accessibility */
 *:focus {
   outline: 2px solid var(--btd-color-accent);

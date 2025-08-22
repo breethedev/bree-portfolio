@@ -1,13 +1,17 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
+import remarkParse from "remark-parse";
+import { unified } from "unified";
+import rehypeHighlight from "rehype-highlight";
+import remarkRehype from "remark-rehype";
+import rehypeRaw from "rehype-raw";
 
 import type { BlogPost } from "../../types";
 import moment from "moment";
+import rehypeStringify from "rehype-stringify";
 
-const articlesDirectory = path.join(process.cwd(), "articles");
+const articlesDirectory = path.join(process.cwd(), "src/articles");
 
 export function getSortedPostsData(): BlogPost[] {
   const fileNames = fs.readdirSync(articlesDirectory);
@@ -69,7 +73,15 @@ export const getPostData = async (id: string): Promise<{ contentHtml: string; po
     url: `/blog/${id}`,
   };
 
-  const processedContent = await remark().use(html).process(matterResult.content);
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkRehype, {
+      allowDangerousHtml: true,
+    })
+    .use(rehypeRaw)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
+    .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
   return {

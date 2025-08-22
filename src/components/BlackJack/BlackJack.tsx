@@ -290,12 +290,9 @@ export default function BlackjackGame() {
 // --- UI bits ---
 function CardView({ card, hidden = false }: { card: Card; hidden?: boolean }) {
   if (hidden) return <CardBack />;
-  const isRed = card.suit === "♥" || card.suit === "♦";
+
   return (
-    <div
-      className={`${s["blackjack-card"]} ${isRed ? s["blackjack-card--red"] : ""}`}
-      aria-label={`${card.rank} of ${suitName(card.suit)}`}
-    >
+    <div className={`${s["blackjack-card"]}`} aria-label={`${card.rank} of ${suitName(card.suit)}`}>
       <div className={s["blackjack-card__content"]}>
         {card.rank}
         {card.suit}

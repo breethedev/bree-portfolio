@@ -4,10 +4,12 @@ import Link from "next/link";
 
 export const Post = ({ category, title, date, url }: BlogPost) => {
   return (
-    <div className={s.post}>
-      <Link href={url}>{title}</Link>
-      <p>{category}</p>
-      <p>{date}</p>
-    </div>
+    <Link href={url}>
+      <div className={s.post}>
+        <div className={s.post__title}>{title}</div>
+        <p className={s.post__category}>{category}</p>
+        <p className={s.post__date}>{date}</p>
+      </div>
+    </Link>
   );
 };
