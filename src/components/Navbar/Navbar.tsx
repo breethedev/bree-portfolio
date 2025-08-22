@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -67,9 +68,9 @@ export default function Navbar() {
     <nav className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__container">
         <div className="navbar__brand">
-          <a href="#home" onClick={(e) => handleNavClick(e, "#home")}>
+          <Link href="#home" onClick={(e) => handleNavClick(e, "#home")}>
             BP
-          </a>
+          </Link>
         </div>
 
         <button
@@ -102,7 +103,7 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a href="/blog">Blog</a>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>

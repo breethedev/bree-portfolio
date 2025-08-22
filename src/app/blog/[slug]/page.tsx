@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { getPostData } from "@/app/lib/articles";
 import s from "./post-page.module.css";
+import { PageProps } from "../../../../.next/types/app/page";
 import { Home } from "lucide-react";
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default async function PostPage({ params }: PageProps) {
   const { slug } = await params;
   const postData = await getPostData(slug);
 

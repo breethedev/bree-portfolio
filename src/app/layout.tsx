@@ -26,16 +26,19 @@ export const viewport: Viewport = {
 const newAmsterdam = New_Amsterdam({
   weight: "400",
   variable: "--btd-font-mono",
+  subsets: ["latin"],
 });
 
 const firaCode = Fira_Code({
   weight: ["400", "500", "600", "700"],
   variable: "--btd-font-main",
+  subsets: ["latin"],
 });
 
 const cascadiaCode = Cascadia_Code({
   weight: ["400", "700"],
   variable: "--btd-font-code",
+  subsets: ["latin"],
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
