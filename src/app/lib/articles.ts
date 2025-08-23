@@ -28,7 +28,7 @@ export function getSortedPostsData(): BlogPost[] {
       title: matterResult.data.title,
       category: matterResult.data.category,
       date: matterResult.data.date,
-      url: `/blog/${id}`,
+      url: `/blog/${matterResult.data.slug || id}`,
     };
   });
 

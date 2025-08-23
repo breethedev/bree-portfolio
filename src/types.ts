@@ -4,4 +4,5 @@ export type BlogPost = {
   category: string;
   date: string;
   url: string;
+  slug?: string;
 };
