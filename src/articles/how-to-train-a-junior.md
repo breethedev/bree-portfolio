@@ -108,4 +108,4 @@ Think of it less as “covering for management” and more as load balancing in 
 
 And if you don’t feel like building this system from scratch, I’ve put together a Notion template that covers all the “admin” side of being a senior onboarding checklists, one-on-one tracking, review prep, the works.
 
-It’s the exact setup I use to keep myself sane while training juniors and still getting my own work done. You can grab it [here](https://breepayton.dev/store).
+It’s the exact setup I use to keep myself sane while training juniors and still getting my own work done. You can grab it [here](https://breeflow.gumroad.com/l/uljyf).
