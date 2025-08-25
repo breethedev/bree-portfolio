@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -67,9 +68,9 @@ export default function Navbar() {
     <nav className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__container">
         <div className="navbar__brand">
-          <a href="#home" onClick={(e) => handleNavClick(e, "#home")}>
+          <Link href="#home" onClick={(e) => handleNavClick(e, "#home")}>
             BP
-          </a>
+          </Link>
         </div>
 
         <button
@@ -88,12 +89,12 @@ export default function Navbar() {
           <ul className="navbar__nav">
             <li>
               <a href="#about" onClick={(e) => handleNavClick(e, "#about")}>
-                About Me
+                About
               </a>
             </li>
             <li>
               <a href="#current-project" onClick={(e) => handleNavClick(e, "#current-project")}>
-                Current Project
+                Projects
               </a>
             </li>
             <li>
@@ -102,21 +103,14 @@ export default function Navbar() {
               </a>
             </li>
             <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                 Contact
               </a>
             </li>
           </ul>
-
-          <div className="navbar__cta">
-            <a
-              href="#contact"
-              className="btn btn--primary"
-              onClick={(e) => handleNavClick(e, "#contact")}
-            >
-              Book A Call
-            </a>
-          </div>
         </div>
       </div>
     </nav>

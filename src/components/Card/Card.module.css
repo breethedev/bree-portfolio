@@ -1,0 +1,25 @@
+.card {
+  background-color: var(--btd-color-card-bg);
+  border: 1px solid var(--btd-color-card-border);
+  border-radius: 0.5rem;
+  padding: var(--btd-space-4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card__title {
+  margin-bottom: auto;
+  font-size: var(--btd-font-size-lg);
+}
+
+.card__description {
+  font-size: var(--btd-font-size-sm);
+  color: var(--btd-color-text-primary);
+}
+
+.post__date {
+  font-size: var(--btd-font-size-xs);
+  color: var(--btd-color-accent);
+}

@@ -2,7 +2,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: row;
+  align-items: center;
+
   padding: 100px var(--btd-space-10);
   color: var(--btd-color-fg);
+}
+
+.blog__header {
+  text-align: center;
+}
+
+.posts_container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--btd-space-10);
+  margin: var(--btd-space-20) 0;
 }

@@ -4,9 +4,12 @@ import { useEffect, useRef } from "react";
 import GameTabs from "@/components/GameTabs/GameTabs";
 import MemoryGame from "@/components/MemoryGame/MemoryGame";
 import BlackJack from "@/components/BlackJack/BlackJack";
-import "./Hero.css";
+import s from "./Hero.module.css";
+import { GAMES, HERO, SELF } from "@/constants";
 
 export default function Hero() {
+  const positions = SELF.position.split(" ");
+
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -28,62 +31,50 @@ export default function Hero() {
     return () => observer.disconnect();
   }, []);
 
-  const handleResumeDownload = () => {
-    // This would typically link to an actual resume file
-    // For now, we&apos;ll just scroll to the contact section
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="home" className="hero" ref={heroRef}>
-      <div className="hero__container">
-        <div className="hero__content">
-          <div className="hero__left">
-            <h1 className="hero__title">
-              <span className="hero__title-line">Senior Frontend</span>
-              <span className="hero__title-line">Engineer</span>
+    <section id="home" className={s["hero"]} ref={heroRef}>
+      <div className={s["hero__container"]}>
+        <div className={s["hero__content"]}>
+          <div className={s["hero__left"]}>
+            <h1 className={s["hero__title"]}>
+              <span className={s["hero__title-line"]}>{`${positions[0]} ${positions[1]}`}</span>
+              <span className={s["hero__title-line"]}>{positions[2]}</span>
             </h1>
 
-            <p className="hero__subtitle">
-              👋 Hi, I&apos;m Bree. Here&apos;s where I build, show, and talk about my skills. Happy
-              you&apos;re here. Take a look around.
-            </p>
+            <p className={s["hero__subtitle"]}>{HERO.subtitle}</p>
 
-            <div className="hero__cta">
-              <a href="#contact" className="btn btn--primary btn--large">
-                Book A Call
+            <div className={s["hero__cta"]}>
+              <a href="#contact" className={`${s["btn"]} ${s["btn--primary"]} ${s["btn--large"]}`}>
+                {HERO.cta_primary}
               </a>
               <a
-                href="/files/resume.pdf"
+                href={HERO.resume_link}
                 download="resume.pdf"
-                className="btn btn--secondary btn--large"
+                className={`${s["btn"]} ${s["btn--secondary"]} ${s["btn--large"]}`}
               >
-                See Resume
+                {HERO.cta_secondary}
               </a>
             </div>
           </div>
 
-          <div className="hero__right">
+          <div className={s["hero__right"]}>
             <GameTabs
               tabs={[
-                { label: "Memory", render: () => <MemoryGame /> },
-                { label: "Blackjack", render: () => <BlackJack /> },
+                { label: GAMES.memory.title, render: () => <MemoryGame /> },
+                { label: GAMES.blackjack.title, render: () => <BlackJack /> },
               ]}
             />
           </div>
         </div>
       </div>
 
-      <div className="hero__background">
-        <div className="hero__background-grid"></div>
+      <div className={s["hero__background"]}>
+        <div className={s["hero__background-grid"]}></div>
       </div>
 
-      <div className="hero__scroll-indicator">
-        <span className="hero__scroll-text">Explore my work</span>
-        <div className="hero__scroll-arrow"></div>
+      <div className={s["hero__scroll-indicator"]}>
+        <span className={s["hero__scroll-text"]}>{HERO.see_my_work}</span>
+        <div className={s["hero__scroll-arrow"]}></div>
       </div>
     </section>
   );
