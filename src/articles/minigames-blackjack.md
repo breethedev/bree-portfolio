@@ -25,10 +25,10 @@ Any card game worth building starts with a proper deck utility. I keep this logi
 
   // used lucide-react for suite icons
   const SUITS: Suit[] = [
-  <Spade key="spade" />,
-  <Club key="club" />,
-  <Diamond key="diamond" />,
-  <Heart key="heart" />,
+    <Spade key="spade" />,
+    <Club key="club" />,
+    <Diamond key="diamond" />,
+    <Heart key="heart" />,
   ];
 
   const RANKS: Rank[] = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -42,20 +42,20 @@ Any card game worth building starts with a proper deck utility. I keep this logi
 
 ```tsx
 function shuffle<T>(array: T[]): T[] {
-const arr = [...array];
-for (let i = arr.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [arr[i], arr[j]] = [arr[j], arr[i]];
-}
-return arr;
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
 
 function makeDeck(): Deck {
-const d: Deck = [];
-for (const s of SUITS) {
-  for (const r of RANKS) d.push({ suit: s, rank: r });
-}
-return shuffle(d);
+  const d: Deck = [];
+  for (const s of SUITS) {
+    for (const r of RANKS) d.push({ suit: s, rank: r });
+  }
+  return shuffle(d);
 }
 ```
 
@@ -78,41 +78,35 @@ function cardValue(rank: Rank): number {
 
 </details>
 
-This makes it trivial to reuse across Blackjack (and if you also build Memory).
+This makes it trivial to reuse across Blackjack (and other card games too).
 
 I also wrote a `handTotals()` helper that handles Aces as 1 or 11. Blackjack is basically just math with edge cases, so nailing that helper early saves you bugs later.
 
 <details>
   <summary>handTotals()</summary>
 
-  ```tsx
-  function handTotals(cards: Card[]): { total: number; soft: boolean } {
+```tsx
+function handTotals(cards: Card[]): { total: number; soft: boolean } {
   // Start by counting all aces as 11, then reduce by 10 while busting
-  let total = 0;
-  let aces = 0;
-  for (const c of cards) {
-    if (c.rank === "A") aces++;
-    total += cardValue(c.rank);
-  }
-  while (total > 21 && aces > 0) {
-    total -= 10; // make one ace count as 1 instead of 11
-    aces--;
-  }
-  const soft = cards.some((c) => c.rank === "A") && total <= 21 && aces > 0; // at least one ace counted as 11
-  return { total, soft };
+    let total = 0;
+    let aces = 0;
+    for (const c of cards) {
+      if (c.rank === "A") aces++;
+      total += cardValue(c.rank);
+    }
+    while (total > 21 && aces > 0) {
+      total -= 10; // make one ace count as 1 instead of 11
+      aces--;
+    }
+    const soft = cards.some((c) => c.rank === "A") && total <= 21 && aces > 0; // at least one ace counted as 11
+    return { total, soft };
 }
   ```
 </details>
 
 ## Step 2: Game State Machine
 
-<!-- <details>
-  <summary></summary>
-  ```tsx
-  ```
-</details> -->
-
-I don’t bother with Redux or fancy state management for a single component. A simple reducer gets the job done:
+Most state management can be handled within React. A simple reducer gets the job done:
 
 <details>
   <summary>idle → player → dealer → resolve</summary>
@@ -227,7 +221,7 @@ The nice thing about a reducer is you can add keyboard shortcuts (D for Deal, H 
 
 ## Step 3: UI Decisions
 
-I wanted a minimalist card UI—no textures, no poker table backgrounds. Just:
+I wanted a minimalist card UI. no textures, no poker table backgrounds. Just:
 
 - White or dark card background.
 - Ranks and suits (no color to keep it minimal).
@@ -269,4 +263,4 @@ This game isn’t about showing off React wizardry. It’s about showing that yo
 
 Could you make it fancier? Sure. Animations, sounds, scoring history, all possible. But in the context of a portfolio header mini-game, less is more. Clean, interactive, and out of the way.
 
-👉 Next up, I might write about how I built the Memory game to sit next to Blackjack in the same tab container. Both share utilities, but the gameplay logic is wildly different and makes for a neat comparison.
+👉 Next up, I might write about how I built the Memory Game to sit next to Blackjack in the same tab container. Both share utilities, but the gameplay logic is wildly different and makes for a neat comparison.
